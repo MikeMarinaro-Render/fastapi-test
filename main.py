@@ -8,14 +8,14 @@ app = FastAPI()
 async def root():
     return {"message": "Hello World"}
 
-@app.get("/test1")
+@app.get("/catapi")
 async def root():
-    x = requests.get('https://w3schools.com')
+    x = requests.get('https://api.thecatapi.com/v1/images/search', timeout=40, allow_redirects=True)
     print(x.status_code)
 
-@app.get("/test2")
+@app.get("/test")
 async def root():
-    return {"message": "Test 2 success!"}
+    return {"message": "Test success!"}
     
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: Optional[str] = None):
