@@ -15,7 +15,7 @@ async def root():
 
 @app.get("/test")
 async def root():
-    x = requests.get('https://fastapi-test-psmh.onrender.com/catapi')
+    x = requests.get('https://fastapi-test-psmh.onrender.com/catapi', timeout=40, allow_redirects=True)
     return {x.content}
     
 @app.get("/items/{item_id}")
