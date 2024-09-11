@@ -11,11 +11,12 @@ async def root():
 @app.get("/catapi")
 async def root():
     x = requests.get('https://api.thecatapi.com/v1/images/search')
-    return(x.status_code)
+    return(x.content)
 
 @app.get("/test")
 async def root():
-    return {"message": "Test success!"}
+    x = requests.get('https://fastapi-test-psmh.onrender.com/catapi')
+    return {x.content}
     
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: Optional[str] = None):
