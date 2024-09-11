@@ -10,7 +10,7 @@ async def root():
 
 @app.get("/catapi")
 async def root():
-    x = requests.get('https://api.thecatapi.com/v1/images/search', timeout=40, allow_redirects=True)
+    x = requests.get('https://api.thecatapi.com/v1/images/search')
     print(x.status_code)
 
 @app.get("/test")
