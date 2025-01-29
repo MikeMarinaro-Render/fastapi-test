@@ -7,7 +7,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    print(os.environ['URL'])
+    print("URL" in os.environ)
     return {"message": "Hello World"}
 
 @app.get("/catapi")
