@@ -9,7 +9,7 @@ app = FastAPI()
 async def root():
     if("URL" in os.environ)
         print("URL key exists! ")
-    else
+else:
         print("URL key DOES NOT exist ")
     return {"message": "Hello World"}
 
