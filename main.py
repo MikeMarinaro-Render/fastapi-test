@@ -6,6 +6,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
+    print(os.environ['VITE_URL'])
     return {"message": "Hello World"}
 
 @app.get("/catapi")
