@@ -8,10 +8,10 @@ app = FastAPI()
 @app.get("/")
 async def root():
     if("URL" in os.environ):
-        print("URL key exists! ")
+        res = "URL key exists!"
     else:
-        print("URL key DOES NOT exist ")
-    return {"message": "Hello World"}
+        res = "URL key DOES NOT exist"
+    return(res)
 
 @app.get("/catapi")
 async def root():
